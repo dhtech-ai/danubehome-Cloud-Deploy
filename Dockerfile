@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Copy the function code
-COPY main.py requirements.txt /app/
+COPY Cloud Run /app/
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
@@ -24,4 +24,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 ENV GOOGLE_CLOUD_PROJECT="danubehome-dlf-prd"
 
 # Run the function framework
-CMD ["functions-framework", "--target=your_function_name"]
+CMD ["python", "main.py"]
