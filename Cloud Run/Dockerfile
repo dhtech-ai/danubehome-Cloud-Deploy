@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Copy the function code
-COPY Cloud Run /app/
+COPY Cloud Run/ .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
